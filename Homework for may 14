@@ -1,0 +1,11 @@
+import sqlite3
+
+def delete_this(title:str,db:str):
+  conn = sqlite3.connect(bd)
+  c = conn.cursor()
+
+  delete = 'DELETE FROM Track WHERE Name = "' + title +'";'
+
+  c.execute(delete)
+  conn.commit()
+  conn.close()
